@@ -1,0 +1,83 @@
+<!--<html>
+    <head>
+         <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyCvewXidiRM27WFUZKCC9JT30Xvntde378" type="text/javascript"></script>
+         <script type="text/javascript">
+            //<![CDATA[ 
+            function createMarker(point,html) {
+                var marker = new GMarker(point);
+                GEvent.addListener(marker, "click", function() {
+                marker.openInfoWindowHtml(html);
+                });
+            return marker;
+            }
+
+            function load() {
+            if (GBrowserIsCompatible()) {
+                var map = new GMap2(document.getElementById("map"));
+                map.addControl(new GSmallMapControl());
+                map.addControl(new GMapTypeControl());
+                map.setCenter(new GLatLng(51.16349933440274, 4.371164292063712 ), 6);
+                var point = new GLatLng(51.16349933440274, 4.371164292063712);
+                var marker = createMarker(point,'<div style="width:240px"> \
+                  Place:    <b>ANTWERPEN          </b><br> \
+                  </div>')
+                  map.addOverlay(marker);
+            }
+           }
+           //]]>
+        </script>
+    </head>
+
+    <body>
+        <form method="get" action="/login/" id="f1">
+            Here form method is GET, so GET includes all the form data..
+            <table>
+                <tr>
+                   <td> User Name :</td><td><input type="text" name="user" value="enter user name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Password  :</td><td><input type="password" name="pwd" value="enter user name"  />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="login" value="Log In" style="font-size:18px; " />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 60%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHrztbQq4t8PnxE1JGcyFQ2EwB9uLRL74&callback=initMap"
+    async defer></script>
+  </body>
+</html>
